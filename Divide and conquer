@@ -1,0 +1,25 @@
+In divide and conquer approach, a problem is divided into smaller problems, then the smaller problems are solved independently, 
+and finally the solutions of smaller problems are combined into a solution for the large problem.
+
+Generally, divide-and-conquer algorithms have three parts −
+
+1. Divide the problem into a number of sub-problems that are smaller instances of the same problem.
+
+2. Conquer the sub-problems by solving them recursively. If they are small enough, solve the sub-problems as base cases.
+
+3. Combine the solutions to the sub-problems into the solution for the original problem.
+
+Pros and cons of Divide and Conquer Approach
+Divide and conquer approach supports parallelism as sub-problems are independent. 
+Hence, an algorithm, which is designed using this technique, can run on the multiprocessor system or in different machines simultaneously.
+
+In this approach, most of the algorithms are designed using recursion, hence memory management is very high. 
+For recursive function stack is used, where function state needs to be stored.
+
+Application of Divide and Conquer Approach
+Following are some problems, which are solved using divide and conquer approach.
+
+Finding the maximum and minimum of a sequence of numbers
+Strassen’s matrix multiplication
+Merge sort
+Binary search
