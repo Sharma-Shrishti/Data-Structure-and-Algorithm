@@ -1,0 +1,33 @@
+a=2
+b=3
+# Approach 1
+
+def power(a,b):
+    p=1
+    while(b>0):
+        p=a*a
+        b-=1
+    return p
+print(pow(a,b))
+
+#Approach 2
+
+def power(a,b):
+    if b==0:
+        return 1
+    if b==1:
+        return a
+    else:
+        return (a*power(a,b-1))
+print(power(a,b))
+
+# Approach 3 (Divide and Conquer)
+
+def power(a,b):
+    if b==0:
+        return 1
+    elif b%2==0:
+        return (power(a,int(b/2))*power(a,b//2))
+    else:
+        return (a*power(a,(int(b/2)))*power(a,int(b/2)))
+print(power(0,2))
