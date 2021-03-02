@@ -1,0 +1,47 @@
+arr=[2,7,9,1,10,0]
+
+# Approach 1 (Using sorting)
+
+arr.sort()   
+maximum=arr[-1]
+minimumn=arr[0]
+print(minimumn,maximum)
+
+# Approach 2
+
+var_small=arr[0]  
+var_high=arr[0]
+for i in range(1,len(arr)):
+    if arr[i]>var_high:
+        var_high=arr[i]  
+    if arr[i]<var_small:
+        var_small=arr[i]
+print(var_small,var_high)
+
+# Approach 3
+ (Using divide and conquer)
+def find(arr,l,r):
+    min1=arr[l]
+    max1=arr[l]
+    if l==r:
+        max1=arr[l]
+        min1=arr[l]
+        #print(min1,max1)
+        return (min1,max1)
+    elif (r==l+1):
+        if arr[l]<arr[r]:
+            max1=arr[r]
+            min1=arr[l]
+        else:
+            max1=arr[l]
+            min1=arr[r]
+        #print(min1,max1)
+        return (min1,max1)
+    else:
+        mid=((l+r)//2)
+        min2,max2=find(arr,l,mid)
+        min3,max3=find(arr,mid+1,r)
+        return( min(min2,min3), max(max2,max3))
+print(find(arr,0,len(arr)-1))  
+    
+  
