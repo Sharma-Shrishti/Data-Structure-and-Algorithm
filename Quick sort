@@ -1,0 +1,20 @@
+def partition(arr,l,r):
+    pivt=arr[l]
+    p=l+1
+    for i in range(l+1,r+1):
+        if(arr[i]<pivt):
+            arr[i],arr[p]=arr[p],arr[i]
+            p+=1
+    arr[p-1],arr[l]=arr[l],arr[p-1]
+    return p-1
+def quick_sort(arr,l,r):
+    if (l<r):
+        pivt=partition(arr,l,r)
+        quick_sort(arr,l,pivt-1)
+        quick_sort(arr,pivt+1,r)
+
+N=int(input())
+arr=list(map(int,input().split()))
+quick_sort(arr,0,N-1)
+
+[x for x in arr]
