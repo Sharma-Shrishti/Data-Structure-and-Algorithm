@@ -1,0 +1,30 @@
+# Approach 1 (Brute Force)
+
+
+#Approch 2 (Divide and Conquer)
+def crossing_sum(arr,l,mid,r):
+    left_sum=-1000
+    sm=0
+    for i in range(mid,l-1,-1):
+        sm+=arr[i]
+        if sm>left_sum:
+            left_sum=sm
+    right_sum=-10000
+    sm=0
+    for i in range(mid+1,r+1):
+        sm+=arr[i]
+        if sm>right_sum:
+            right_sum=sm
+    
+    return left_sum+right_sum
+
+def subarray_sum(arr,l,r):
+    if l==r:
+        return arr[l]
+    
+    mid=(l+r)//2
+    return max(subarray_sum(arr,l,mid),subarray_sum(arr,mid+1,r),crossing_sum(arr,l,mid,r))
+arr=[-2,4,-6,1,0]
+subarray_sum(arr,0,len(arr)-1)
+
+# Approach 3 (Dynamic Programming)
