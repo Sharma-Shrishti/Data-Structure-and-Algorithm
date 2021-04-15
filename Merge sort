@@ -1,14 +1,14 @@
 arr=[2,9,0,1,6]
 def merge(arr,l,r,mid):
-    p1=l
-    p2=mid+1              
-    temp=[0]*(len(arr))
+    p1=l   # Pointer for left array
+    p2=mid+1      # Pointer for right array          
+    temp=[0]*(len(arr))   # temp array
     #for i in range(len(arr)):
         #temp[i]=0
-    k=l
+    k=l  # pointer for temp array
     # This will run until either of one side of array exhaust
     while(p1<=mid and p2<=r):
-        if arr[p1]<arr[p2]:
+        if arr[p1]<arr[p2]:    # Check first elemnt of both side of array
             temp[k]=arr[p1]
             k+=1
             p1+=1
