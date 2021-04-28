@@ -1,0 +1,11 @@
+def sort(arr):
+    temp=0
+    l=len(arr)
+    for i in range(0,l-1):
+        for j in range(0,l-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+            
+     return arr
+arr=[9,1,7,3,0]
+sort(arr)
