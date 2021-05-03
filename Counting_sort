@@ -1,0 +1,16 @@
+def sort(arr):
+    m=max(arr)
+    temp=[0 for x in range(m+1)]
+    sorted_array=[]
+    for i in range(len(arr)):  
+        temp[arr[i]]+=1
+    
+    for i in range(m+1):    
+        value=temp[i]
+        while (value>0):
+            sorted_array.append(i)
+            value-=1
+    
+    for i in sorted_array:
+        print(i,end=" ")
+sort([2,9,4,1,10,6,1])
